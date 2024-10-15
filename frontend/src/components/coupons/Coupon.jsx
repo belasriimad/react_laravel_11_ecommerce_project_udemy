@@ -30,7 +30,7 @@ export default function Coupon() {
                 toast.success(response.data.message)
             }
         } catch (error) {
-            
+            console.log(error)
         }
     }
 
