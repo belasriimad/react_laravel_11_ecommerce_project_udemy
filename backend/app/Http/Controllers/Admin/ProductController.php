@@ -108,28 +108,28 @@ class ProductController extends Controller
             $data = $request->all();
             if($request->has('thumbnail')) {
                 //remove the old thumbnail
-                $this->removeProductImageFromStorage($request->file('thumbnail'));
+                $this->removeProductImageFromStorage($product->thumbnail);
                 //store the new thumbnail
                 $data['thumbnail'] = $this->saveImage($request->file('thumbnail'));
             }
             //check if the admin upload the first image
             if($request->has('first_image')) {
                 //remove the old first image
-                $this->removeProductImageFromStorage($request->file('first_image'));
+                $this->removeProductImageFromStorage($product->first_image);
                 //store the new first image
                 $data['first_image'] = $this->saveImage($request->file('first_image'));
             }
             //check if the admin upload the second image
             if($request->has('second_image')) {
                 //remove the old second image
-                $this->removeProductImageFromStorage($request->file('second_image'));
+                $this->removeProductImageFromStorage($product->second_image);
                 //store the new second image
                 $data['second_image'] = $this->saveImage($request->file('second_image'));
             }
             //check if the admin upload the third image
             if($request->has('third_image')) {
                 //remove the old third image
-                $this->removeProductImageFromStorage($request->file('third_image'));
+                $this->removeProductImageFromStorage($product->third_image);
                 //store the new third image
                 $data['third_image'] = $this->saveImage($request->file('third_image'));
             }
@@ -180,7 +180,7 @@ class ProductController extends Controller
      */
     public function removeProductImageFromStorage($file)
     {
-        $path = public_path('storage/images/products/'.$file);
+        $path = public_path($file);
         if(File::exists($path)) {
             File::delete($path);
         }
