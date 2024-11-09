@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Coupon from '../coupons/Coupon'
-import { setValidCoupon } from '../../redux/slices/cartSlice'
+import { addCouponIdToCartItem, setValidCoupon } from '../../redux/slices/cartSlice'
 import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
 import Alert from '../layouts/Alert'
@@ -32,6 +32,7 @@ export default function Checkout() {
             name: '',
             discount: 0
         }))
+        dispatch(addCouponIdToCartItem(null))
         toast.success('Coupon removed')
     }
 
