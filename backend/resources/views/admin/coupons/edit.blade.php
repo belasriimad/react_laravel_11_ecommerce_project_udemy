@@ -23,7 +23,7 @@
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="floatingInput" 
                                             name="name" placeholder="Name"
-                                            value="{{$coupon->name,old('name')}}">
+                                            value="{{old('name',$coupon->name)}}">
                                         <label for="floatingInput">Name*</label>
                                         @error('name')
                                             <span class="invalid-feedback">
@@ -34,7 +34,7 @@
                                     <div class="form-floating mb-3">
                                         <input type="number" class="form-control @error('discount') is-invalid @enderror" id="floatingInput" 
                                             name="discount" placeholder="Discount"
-                                            value="{{$coupon->discount,old('discount')}}">
+                                            value="{{old('discount',$coupon->discount)}}">
                                         <label for="floatingInput">Discount*</label>
                                         @error('discount')
                                             <span class="invalid-feedback">
