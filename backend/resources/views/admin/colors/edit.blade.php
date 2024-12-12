@@ -23,7 +23,7 @@
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="floatingInput" 
                                             name="name" placeholder="Name"
-                                            value="{{$color->name, old('name')}}">
+                                            value="{{old('name',$color->name)}}">
                                         <label for="floatingInput">Name*</label>
                                         @error('name')
                                             <span class="invalid-feedback">
