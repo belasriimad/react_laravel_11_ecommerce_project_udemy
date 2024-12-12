@@ -23,7 +23,7 @@
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="floatingInput" 
                                             name="name" placeholder="Name"
-                                            value="{{$product->name,old('name')}}">
+                                            value="{{old('name',$product->name)}}">
                                         <label for="floatingInput">Name*</label>
                                         @error('name')
                                             <span class="invalid-feedback">
@@ -34,7 +34,7 @@
                                     <div class="form-floating mb-3">
                                         <input type="number" class="form-control @error('qty') is-invalid @enderror" id="floatingInput" 
                                             name="qty" placeholder="Quantity"
-                                            value="{{$product->qty,old('qty')}}">
+                                            value="{{old('qty',$product->qty)}}">
                                         <label for="floatingInput">Quantity*</label>
                                         @error('qty')
                                             <span class="invalid-feedback">
@@ -45,7 +45,7 @@
                                     <div class="form-floating mb-3">
                                         <input type="number" class="form-control @error('price') is-invalid @enderror" id="floatingInput" 
                                             name="price" placeholder="Price"
-                                            value="{{$product->price,old('price')}}">
+                                            value="{{old('price',$product->price)}}">
                                         <label for="floatingInput">Price*</label>
                                         @error('price')
                                             <span class="invalid-feedback">
@@ -93,7 +93,7 @@
                                         <label for="desc" class="my-2">Description*</label>
                                         <textarea rows="10" class="form-control summernote @error('desc') is-invalid @enderror" id="floatingInput" 
                                             name="desc" placeholder="Description"
-                                        >{{$product->desc,old('desc')}}</textarea> 
+                                        >{{old('desc',$product->desc)}}</textarea> 
                                         @error('desc')
                                             <span class="invalid-feedback">
                                                 <strong>{{$message}}</strong>    
