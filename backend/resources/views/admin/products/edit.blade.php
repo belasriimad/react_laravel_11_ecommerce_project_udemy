@@ -59,7 +59,7 @@
                                             multiple>
                                             @foreach ($colors as $color)
                                                 <option 
-                                                    @if(collect(old('color_id'))->contains($color->id) || $product->colors->contains($color->id)) selected @endif
+                                                    @if(collect(old('color_id',$product->colors->pluck('id')))->contains($color->id)) selected @endif
                                                     value="{{$color->id}}">
                                                     {{$color->name}}
                                                 </option>
@@ -77,7 +77,7 @@
                                             multiple>
                                             @foreach ($sizes as $size)
                                                 <option 
-                                                    @if(collect(old('size_id'))->contains($size->id) || $product->sizes->contains($size->id)) selected @endif
+                                                    @if(collect(old('size_id',$product->sizes->pluck('id')))->contains($size->id)) selected @endif
                                                     value="{{$size->id}}">
                                                     {{$size->name}}
                                                 </option>
